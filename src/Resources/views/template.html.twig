@@ -1,0 +1,24 @@
+{% if breadcrumbs|length %}
+    {%- spaceless -%}
+        <{{ list['type'] }} class="{{ list['class'] }}" itemscope itemtype="http://schema.org/BreadcrumbList">
+            {% for item in breadcrumbs %}
+                <li class="{{ item['class']|default('') }}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+
+                    {% if item.url and not loop.last %}
+                        <a href="{{ item.url }}" itemprop="item">
+                            <span itemprop="name">{{ item.text }}</span>
+                        </a>
+                    {% else %}
+                        <span itemprop="name">{{ item.text }}</span>
+                    {% endif %}
+
+                    <meta itemprop="position" content="{{ loop.index }}" />
+
+                    {% if separator['value'] is not null and not loop.last %}
+                        <span class='{{ separator['class'] }}'>{{ separator['value'] }}</span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </{{ list['type'] }}>
+    {%- endspaceless -%}
+{% endif %}

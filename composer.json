@@ -1,0 +1,39 @@
+{
+    "name": "vragovr/breadcrumbs-bundle",
+    "description": "Breadcrumbs Bundle",
+    "version": "0.0.1",
+    "type": "library",
+    "keywords": [
+        "symfony",
+        "bundle",
+        "breadcrubms"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roman Vragov",
+            "email": "vragovR@yandex.ru"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "symfony/dependency-injection": "^4.0",
+        "symfony/config": "^4.0",
+        "symfony/http-kernel": "^4.0",
+        "symfony/twig-bundle": "^4.0",
+        "symfony/templating": "^4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BreadcrumbsBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BreadcrumbsBundle\\": "tests/"
+        }
+    }
+}
